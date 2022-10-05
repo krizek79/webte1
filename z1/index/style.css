@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Lato;
+    src: url("../resources/font/Lato-Regular.ttf");
+}
+
+body {
+    font-family: Lato, system-ui;
+}
+
 /*Header*/
 header h1 {
     margin-top: 15%;

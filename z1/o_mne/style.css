@@ -1,3 +1,12 @@
+@font-face {
+    font-family: Lato;
+    src: url("../resources/font/Lato-Regular.ttf");
+}
+
+body {
+    font-family: Lato, serif;
+}
+
 /*Header*/
 header h1 {
     font-size: 48px;
@@ -47,4 +56,25 @@ article {
 
 article h2 {
     font-size: 32px;
+}
+
+#myPhoto {
+    border-radius: 10px;
+    width: 233px;
+    height: 312px;
+}
+
+#contentBox {
+    display: flex;
+}
+
+#photoWithUL {
+    float: left;
+    width: 33.33%;
+}
+
+.contentBoxParagraph {
+    float: left;
+    width: 33.33%;
+    padding: 0 20px 0 20px;
 }
