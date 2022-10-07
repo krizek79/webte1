@@ -1,6 +1,6 @@
 @font-face {
     font-family: Lato;
-    src: url("../resources/font/Lato-Regular.ttf");
+    src: url("../resources/fonts/Lato-Regular.ttf");
 }
 
 body {
@@ -58,23 +58,57 @@ article h2 {
     font-size: 32px;
 }
 
-#myPhoto {
-    border-radius: 10px;
-    width: 233px;
-    height: 312px;
+aside {
+    margin-bottom: 20px;
+    font-style: italic;
 }
 
-#contentBox {
+.contentBox {
     display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
 }
 
-#photoWithUL {
-    float: left;
-    width: 33.33%;
+#photoAndUL {
+    min-width: 25%;
+    max-width: 25%;
 }
 
-.contentBoxParagraph {
-    float: left;
-    width: 33.33%;
-    padding: 0 20px 0 20px;
+#photoOfMe {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.paragraph {
+    width: 30%;
+}
+
+/*Footer*/
+footer {
+    margin: 20px auto auto auto;
+    width: 80%;
+    text-align: end;
+    border-top: 1px solid black;
+    padding: 20px;
+}
+
+/*Responsive*/
+@media all and (max-width: 992px) {
+    article {
+        text-align: center;
+    }
+    .contentBox {
+        flex-flow: column;
+        gap: 20px;
+    }
+    #photoAndUL {
+        margin: auto;
+        min-width: 70%;
+        max-width: 70%;
+    }
+    .paragraph {
+        margin: auto;
+        width: 80%;
+    }
 }
