@@ -58,12 +58,7 @@ article h2 {
     font-size: 32px;
 }
 
-aside {
-    margin-bottom: 20px;
-    font-style: italic;
-}
-
-.contentBox {
+#contentBox {
     display: flex;
     flex-wrap: wrap;
     gap: 70px;
@@ -81,7 +76,12 @@ aside {
 }
 
 .paragraph {
-    width: 30%;
+    width: 25%;
+}
+
+aside {
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
 /*Footer*/
@@ -98,7 +98,7 @@ footer {
     article {
         text-align: center;
     }
-    .contentBox {
+    #contentBox {
         flex-flow: column;
         gap: 20px;
     }

@@ -57,3 +57,102 @@ article {
 article h2 {
     font-size: 32px;
 }
+
+#contentBox {
+    display: flex;
+    width: 100%;
+}
+
+.column {
+    max-height: 100%;
+}
+
+/*Contact and photo column*/
+#contactAndPhotoColumn {
+    background-color: #7a7a7a;
+    width: 25%;
+    min-width: 25%;
+}
+
+#contact {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#contact h4 {
+    font-size: large;
+    color: #eaeaea;
+}
+
+#contact address {
+    font-style: normal;
+    font-size: medium;
+    line-height: 32px;
+    color: black;
+}
+
+#contact address a {
+    text-decoration: none;
+}
+
+#photoOfMe {
+    width: 100%;
+    height: auto;
+}
+
+/*Education and skills column*/
+#educationAndSkillsColumn {
+    background-color: darkgrey;
+    padding: 30px;
+    width: 100%;
+}
+
+#education {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#computerSkills {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#computerSkills ul {
+    column-count: 2;
+}
+
+#languageSkills {
+    padding-bottom: 10px;
+}
+
+#languageSkills ul {
+    column-count: 2;
+}
+
+/*Footer*/
+footer {
+    margin: 20px auto auto auto;
+    width: 80%;
+    text-align: end;
+    border-top: 1px solid black;
+    padding: 20px;
+}
+
+/*Responsive*/
+@media all and (max-width: 768px) {
+    #contentBox {
+        flex-flow: column;
+    }
+    #contactAndPhotoColumn {
+        width: 100%;
+    }
+    #educationAndSkillsColumn {
+        width: auto;
+    }
+    #computerSkills ul {
+        column-count: 1;
+    }
+    #languageSkills ul {
+        column-count: 1;
+    }
+}
