@@ -57,3 +57,29 @@ article {
 article h2 {
     font-size: 32px;
 }
+
+/*Time table*/
+table {
+    text-align: center;
+}
+
+.lecture {
+    background-color: #5fbb5f;
+}
+
+.practice {
+    background-color: cadetblue;
+}
+
+.gym {
+    background-color: #ff9167;
+}
+
+/*Footer*/
+footer {
+    margin: 20px auto auto auto;
+    width: 80%;
+    text-align: end;
+    border-top: 1px solid black;
+    padding: 20px;
+}
