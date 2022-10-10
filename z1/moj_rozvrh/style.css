@@ -61,6 +61,26 @@ article h2 {
 /*Time table*/
 table {
     text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+thead {
+    background-color: #7a7a7a;
+    border-bottom: 1px solid black;
+}
+
+thead td {
+    max-width: 100px;
+}
+
+tr:nth-of-type(even) {
+    background-color: #d2d2d2;
+}
+
+.day {
+    border-right: 1px solid black;
 }
 
 .lecture {
