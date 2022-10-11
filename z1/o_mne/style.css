@@ -94,18 +94,25 @@ footer {
 
 /*Responsive*/
 @media all and (max-width: 992px) {
+    #mainNavBar li {
+        display: block;
+    }
+
     article {
         text-align: center;
     }
+
     #contentBox {
         flex-flow: column;
         gap: 20px;
     }
+
     #photoAndUL {
         margin: auto;
         min-width: 70%;
         max-width: 70%;
     }
+
     aside {
         max-width: 100%;
         float: none;

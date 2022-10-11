@@ -140,18 +140,26 @@ footer {
 
 /*Responsive*/
 @media all and (max-width: 768px) {
+    #mainNavBar li {
+        display: block;
+    }
+
     #contentBox {
         flex-flow: column;
     }
+
     #contactAndPhotoColumn {
         width: 100%;
     }
+
     #educationAndSkillsColumn {
         width: auto;
     }
+
     #computerSkills ul {
         column-count: 1;
     }
+
     #languageSkills ul {
         column-count: 1;
     }

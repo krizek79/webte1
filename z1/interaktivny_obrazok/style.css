@@ -58,47 +58,72 @@ article h2 {
     font-size: 32px;
 }
 
-/*Time table*/
-table {
-    text-align: center;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 1px solid black;
+/*ContentBox*/
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-thead {
-    background-color: #7a7a7a;
-    border-bottom: 1px solid black;
+.member {
+    border-radius: 50%;
+    border: 2px solid darkred;
+    position: absolute;
+    width: 100px;
+    height: 100px;
 }
 
-th, td {
-    width: 250px;
-    border: 1px solid black;
+.member h3 {
+    color: darkred;
 }
 
-tr:nth-of-type(even) {
-    background-color: #d2d2d2;
+.member div {
+    display: none;
 }
 
-.day {
-    border-right: 1px solid black;
+.member:hover div {
+    display: block;
 }
 
-.lecture {
-    background-color: #5fbb5f;
+.member:hover {
+    background-color: white;
+    padding-left: 15px;
+    border-radius: 0;
+    width: 15%;
+    height: auto;
 }
 
-.practice {
-    background-color: cadetblue;
+.conrad {
+    top: 44%;
+    left: 14%;
 }
 
-.gym {
-    background-color: #ff9167;
+.femto {
+    top: 49%;
+    left: 30%;
+}
+
+.void {
+    top: 59%;
+    right: 43.5%;
+}
+
+.slan {
+    top: 51%;
+    right: 32%;
+}
+
+.ubik {
+    top: 105%;
+    right: 38%;
+}
+
+.ubik:hover {
+    top: 90%;
 }
 
 /*Footer*/
 footer {
-    margin: 20px auto auto auto;
+    margin: 20px auto 0 auto;
     width: 80%;
     text-align: end;
     border-top: 1px solid black;

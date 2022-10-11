@@ -53,3 +53,9 @@ header h1 a {
 #mainNavBar li a:hover {
     color: #a9a9a9;
 }
+
+@media all and (max-width: 576px) {
+    #mainNavBar li {
+        display: block;
+    }
+}
