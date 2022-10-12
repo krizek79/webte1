@@ -10,6 +10,15 @@ body {
 /*Header*/
 header h1 {
     font-size: 48px;
+    margin-bottom: 0;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+header h2 {
+    font-size: 28px;
     text-align: center;
     display: inline-block;
     position: relative;
