@@ -68,8 +68,12 @@ article h2 {
 }
 
 /*ContentBox*/
+#contentBox {
+    position: relative;
+}
+
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     position: relative;
 }
@@ -78,8 +82,9 @@ img {
     border-radius: 50%;
     border: 2px solid darkred;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 10%;
+    height: auto;
+    padding-top: 10%;
 }
 
 .member h3 {
@@ -95,40 +100,44 @@ img {
 }
 
 .member:hover {
+    z-index: 1;
     background-color: white;
     padding-left: 15px;
+    padding-top: 0;
     border-radius: 0;
-    width: 15%;
+    width: 20%;
     height: auto;
 }
 
 .conrad {
-    top: 44%;
-    left: 14%;
+    top: 10%;
+    left: 7%;
 }
 
 .femto {
-    top: 49%;
-    left: 30%;
+    top: 14%;
+    left: 31%;
 }
 
 .void {
-    top: 59%;
-    left: 49%;
+    top: 25%;
+    left: 59%;
 }
 
 .slan {
-    top: 51%;
-    left: 60%;
+    top: 15%;
+    left: 76%;
 }
 
 .ubik {
-    top: 105%;
-    left: 55%;
+    top: 68%;
+    left: 68%;
 }
 
 .ubik:hover {
-    top: 90%;
+    top: 60%;
+    left: 30%;
+    width: 30%;
 }
 
 /*Footer*/
@@ -144,4 +153,6 @@ footer {
     #mainNavBar li {
         display: block;
     }
+
+
 }
