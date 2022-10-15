@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Vyplňovací formulár</title>
+</head>
+<body>
+    <div id="content-box">
+        <h1>Vyplňovací formulár</h1>
+        <div>
+            <div class="row">
+                <label for="first-name">
+                    Meno:
+                    <input type="text" id="first-name" name="firstName">
+                </label>
+            </div>
+            <div class="row">
+                <label for="last-name">
+                    Priezvisko:
+                    <input type="text" id="last-name" name="lastName">
+                </label>
+            </div>
+            <div id="sex-div">
+                Pohlavie:
+                <label for="sex-male">
+                    <input type="radio" name="sex" id="sex-male"> Muž
+                </label>
+                <label for="sex-female">
+                    <input type="radio" name="sex" id="sex-female"> Žena
+                </label>
+                <label for="sex-other">
+                    <input type="radio" name="sex" id="sex-other"> Iné
+                </label>
+            </div>
+            <div class="row">
+                <label for="email">
+                    E-mail:
+                    <input type="email" id="email" placeholder="***@**.**">
+                </label>
+            </div>
+            <div class="row">
+                <label for="phone-number">
+                    Telefónne číslo:
+                    <input type="text" id="phone-number" placeholder="+421 *** *** ***">
+                </label>
+            </div>
+            <div class="row">
+                <label for="age">
+                    Vek:
+                    <input type="number" id="age" name="age">
+                </label>
+            </div>
+            <div class="row">
+                <label for="birth-date">
+                    Dátum narodenia:
+                    <input type="date" id="birth-date" name="birthDate">
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
