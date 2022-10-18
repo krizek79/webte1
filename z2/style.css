@@ -10,20 +10,28 @@ body {
     background-color: white;
     max-width: 80%;
     margin: 30px auto;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     border-radius: 20px;
 }
 
 h1 {
     text-align: center;
+    width: 100%;
+}
+
+.column {
+    width: 50%;
 }
 
 .row {
-    margin: 5px auto;
+    width: 100%;
+    margin: 5px 0;
 }
 
 input[type=text], input[type=email], input[type=number], input[type=date] {
     width: 100%;
+    max-width: 90%;
     padding: 5px;
     margin: 5px auto;
 }
@@ -33,8 +41,28 @@ input[type=text], input[type=email], input[type=number], input[type=date] {
     gap: 30px;
 }
 
-@media all and (max-width: 576px) {
+@media all and (max-width: 992px) {
+    #first-column {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    input[type=text], input[type=email], input[type=number], input[type=date] {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 5px 0 5px 5px;
+    }
+
+    #content-box {
+        flex-flow: column;
+    }
+
     #sex-div {
-        gap: 5px;
+        gap: 20px;
     }
 }
