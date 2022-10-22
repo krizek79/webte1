@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    background-color: #232323;
+    background-image: linear-gradient(to right, lightskyblue, powderblue);
 }
 
 #content-box {
@@ -13,11 +13,22 @@ body {
     display: flex;
     flex-wrap: wrap;
     border-radius: 20px;
+    letter-spacing: 1px;
 }
 
 h1 {
     text-align: center;
     width: 100%;
+}
+
+#firstColumn {
+    box-sizing: border-box;
+    border-right: 1px solid black;
+}
+
+#second-column {
+    box-sizing: border-box;
+    padding-left: 50px;
 }
 
 .column {
@@ -26,23 +37,54 @@ h1 {
 
 .row {
     width: 100%;
-    margin: 5px 0;
+    margin: 30px 0;
+}
+
+label {
+    display: flex;
+    flex-flow: column;
+    font-size: medium;
 }
 
 input[type=text], input[type=email], input[type=number], input[type=date] {
     width: 100%;
     max-width: 90%;
-    padding: 5px;
-    margin: 5px auto;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: large;
+    border-radius: 10px;
+}
+
+input[type=radio] {
+    accent-color: green;
+    height: 16px;
 }
 
 #sex-div {
     display: flex;
-    gap: 30px;
+    column-gap: 100px;
+}
+
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: large;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#legend {
+    width: 100%;
+    text-align: right;
+    color: #646464;
+    font-size: smaller;
 }
 
 @media all and (max-width: 992px) {
-    #first-column {
+    #firstColumn {
+        border-right: none;
         border-bottom: 1px solid black;
         padding-bottom: 10px;
     }
@@ -58,11 +100,29 @@ input[type=text], input[type=email], input[type=number], input[type=date] {
         padding: 5px 0 5px 5px;
     }
 
+    #second-column {
+        padding-left: 0;
+    }
+
+    select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 5px 0 5px 5px;
+    }
+
     #content-box {
         flex-flow: column;
     }
 
     #sex-div {
-        gap: 20px;
+        gap: 30px;
+    }
+}
+
+@media all and (max-width: 280px) {
+    #sex-div {
+        flex-flow: column;
+        gap: 10px;
     }
 }

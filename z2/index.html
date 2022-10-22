@@ -11,61 +11,81 @@
 <body>
     <div id="content-box">
         <h1>Registrácia na lekársku prehliadku</h1>
-        <div class="column" id="first-column">
+        <div class="column" id="firstColumn">
             <div class="row">
-                <label for="first-name">
-                    Meno:<br>
-                    <input type="text" id="first-name" name="firstName">
+                <h2>Osobné informácie</h2>
+            </div>
+            <div class="row">
+                <label for="firstName">
+                    Meno*:<br>
+                    <input type="text" id="firstName" name="firstName" onkeyup="validateFirstName()">
+                    <span id="firstNameError"></span>
                 </label>
             </div>
             <div class="row">
-                <label for="last-name">
-                    Priezvisko:<br>
-                    <input type="text" id="last-name" name="lastName">
+                <label for="lastName">
+                    Priezvisko*:<br>
+                    <input type="text" id="lastName" name="lastName" onkeyup="validateLastName()">
+                    <span id="lastNameError"></span>
                 </label>
             </div>
             <div id="sex-div">
-                Pohlavie:<br>
-                <label for="sex-male">
-                    <input type="radio" name="sex" id="sex-male"> Muž
+                Pohlavie*:<br>
+                <label for="sexMale">
+                    <input type="radio" name="sex" id="sexMale"> Muž
                 </label>
-                <label for="sex-female">
-                    <input type="radio" name="sex" id="sex-female"> Žena
-                </label>
-                <label for="sex-other">
-                    <input type="radio" name="sex" id="sex-other"> Iné
+                <label for="sexFemale">
+                    <input type="radio" name="sex" id="sexFemale"> Žena
                 </label>
             </div>
             <div class="row">
                 <label for="email">
-                    E-mail:<br>
-                    <input type="email" id="email" placeholder="***@**.**">
+                    E-mail*:<br>
+                    <input type="email" id="email" placeholder="***@**.**" onkeyup="validateEmail()">
+                    <span id="emailError"></span>
                 </label>
             </div>
             <div class="row">
-                <label for="phone-number">
-                    Telefónne číslo:<br>
-                    <input type="text" id="phone-number" placeholder="+421 *** *** ***">
+                <label for="phoneNumber">
+                    Telefónne číslo (nepovinné):<br>
+                    <input type="text" id="phoneNumber" placeholder="+421*********" onkeyup="validatePhoneNumber()">
+                    <span id="phoneNumberError"></span>
+                </label>
+            </div>
+            <div class="row">
+                <label for="birthDate">
+                    Dátum narodenia*:<br>
+                    <input type="date" id="birthDate" name="birthDate" oninput="calculateAndSetAge()">
+                    <span id="birthDateError"></span>
                 </label>
             </div>
             <div class="row">
                 <label for="age">
-                    Vek:<br>
-                    <input type="number" id="age" name="age">
+                    Vek*:<br>
+                    <input type="number" id="age" name="age" oninput="validateAge()">
+                    <span id="ageError"></span>
                 </label>
             </div>
+            <!--      Pop up divs      -->
             <div class="row">
-                <label for="birth-date">
-                    Dátum narodenia:<br>
-                    <input type="date" id="birth-date" name="birthDate">
-                </label>
             </div>
         </div>
+
         <div class="column" id="second-column">
             <div class="row">
-
+                <h2>Bližšia špecifikácia</h2>
+            </div>
+            <div class="row">
+                <label for="region">
+                    Kraj:<br>
+                    <select name="region" id="region">
+                        <option selected="selected">---</option>
+                    </select>
+                </label>
             </div>
         </div>
+
+        <div id="legend">* povinné pole</div>
     </div>
 
     <script src="script.js"></script>
