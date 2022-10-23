@@ -10,7 +10,8 @@
 </head>
 <body>
     <div id="content-box">
-        <h1>Registrácia na lekársku prehliadku</h1>
+        <h1>Registrácia termínu stretnutia v barbershope</h1>
+
         <div class="column" id="firstColumn">
             <div class="row">
                 <h2>Osobné informácie</h2>
@@ -19,7 +20,7 @@
                 <label for="firstName">
                     Meno*:<br>
                     <input type="text" id="firstName" name="firstName" onkeyup="validateFirstName()">
-                    <span id="firstNameError"></span>
+                    <span class="error" id="firstNameError"></span>
                 </label>
             </div>
             <div class="row">
@@ -66,9 +67,6 @@
                     <span id="ageError"></span>
                 </label>
             </div>
-            <!--      Pop up divs      -->
-            <div class="row">
-            </div>
         </div>
 
         <div class="column" id="second-column">
@@ -76,13 +74,75 @@
                 <h2>Bližšia špecifikácia</h2>
             </div>
             <div class="row">
-                <label for="region">
+                <label for="appointmentDate">
+                    Dátum stretnutia*<br>
+                    <input type="date" id="appointmentDate" name="appointmentDate" oninput="validateAppointmentDate()">
+                    <span id="appointmentDateError"></span>
+                </label>
+            </div>
+            <div class="row">
+                <label for="appointmentTime">
+                    Čas stretnutia*<br>
+                    <input type="time" id="appointmentTime" name="appointmentTime" oninput="validateAppointmentTime()">
+                    <span id="appointmentTimeError"></span>
+                </label>
+            </div>
+            <div class="row">
+                <h3>Výber prevádzky</h3>
+            </div>
+            <div class="row">
+                <label for="regionSelect" id="region">
                     Kraj:<br>
-                    <select name="region" id="region">
+                    <select name="regionSelect" id="regionSelect" oninput="showOptions()">
                         <option selected="selected">---</option>
                     </select>
                 </label>
             </div>
+            <div class="row">
+                <label for="districtSelect" id="district">
+                    Okres:<br>
+                    <select name="districtSelect" id="districtSelect" oninput="showOptions()">
+                        <option selected="selected">---</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <label for="workerSelect" id="worker">
+                    Kto sa o mňa postará:<br>
+                    <select name="workerSelect" id="workerSelect" oninput="showOptions()">
+                        <option selected="selected">---</option>
+                    </select>
+                </label>
+            </div>
+            <div class="row">
+                <h3>Výber služby</h3>
+            </div>
+            <div class="row" id="service">
+                <label for="classicMensCut">
+                    Klasický pánsky strih ..... 18 €
+                    <input type="radio" name="service" id="classicMensCut">
+                </label>
+                <label for="beardService">
+                    Úprava brady ..... 15 €
+                    <input type="radio" name="service" id="beardService">
+                </label>
+                <label for="classicWomensCut">
+                    Klasický dámsky strih ..... 25 €
+                    <input type="radio" name="service" id="classicWomensCut">
+                </label>
+                <label for="eyebrowsService">
+                    Úprava obočia ..... 9 €
+                    <input type="radio" name="service" id="eyebrowsService">
+                </label>
+                <label for="fullService">
+                    Plný servis ..... 30 €
+                    <input type="radio" name="service" id="fullService">
+                </label>
+            </div>
+        </div>
+
+        <div id="submitButtonDiv">
+            <input type="submit" value="Odoslať">
         </div>
 
         <div id="legend">* povinné pole</div>
