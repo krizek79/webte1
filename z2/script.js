@@ -19,7 +19,7 @@ const barberShops = {
         "Košice IV": ["Zuzka", "Miška"],
         "Trebišov": ["Oľga", "Igor"]
     }
-};
+}
 
 function validateFirstName() {
     let firstName = document.getElementById("firstName")
@@ -208,10 +208,10 @@ window.onload = function () {
         }
     }
 
-    showOptions()
+    showBarbershopsOptions()
 }
 
-function showOptions() {
+function showBarbershopsOptions() {
     let regions = document.getElementById("regionSelect")
     let districts = document.getElementById("districtSelect")
     let districtLabel = document.getElementById("district")
@@ -230,3 +230,24 @@ function showOptions() {
         workersLabel.style.display = "block"
     }
 }
+
+function showNoteTextArea() {
+    let checkbox = document.getElementById("note")
+    let textAreaDiv = document.getElementById("noteTextAreaDiv")
+
+    if (checkbox.checked) {
+        textAreaDiv.style.display = "block"
+    } else {
+        textAreaDiv.style.display = "none"
+    }
+}
+
+const noteTextArea = document.getElementById("noteTextArea")
+const letterCounter = document.getElementById("letterCounter")
+noteTextArea.addEventListener("input", event => {
+    const target = event.currentTarget;
+    const maxLength = target.getAttribute("maxlength");
+
+    letterCounter.style.fontSize = "smaller"
+    letterCounter.innerHTML = target.value.length + "/" + maxLength
+});

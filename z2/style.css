@@ -10,7 +10,7 @@ body {
     padding: 20px 50px 50px;
     background-color: white;
     max-width: 80%;
-    margin: 30px auto;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
     border-radius: 20px;
@@ -58,7 +58,7 @@ input[type=text], input[type=email], input[type=number], input[type=date], input
     max-width: 90%;
     padding: 10px;
     margin: 5px 0;
-    font-size: large;
+    font-size: medium;
     border-radius: 10px;
 }
 
@@ -72,8 +72,39 @@ input[type=radio] {
     column-gap: 100px;
 }
 
-#service label {
-    display: block;
+#noteCheckboxDiv {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+#noteCheckboxDiv input {
+    height: 15px;
+    width: 15px;
+    accent-color: green;
+}
+
+#noteCheckboxDiv label {
+    font-size: large;
+}
+
+#noteTextAreaDiv {
+    display: none;
+}
+
+#noteTextArea {
+    resize: none;
+    margin-top: 10px;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+#letterCounter {
+    float: right;
 }
 
 select {
@@ -81,7 +112,7 @@ select {
     max-width: 100%;
     padding: 10px;
     margin: 5px 0;
-    font-size: large;
+    font-size: medium;
     border-radius: 10px;
     box-sizing: border-box;
 }
@@ -89,6 +120,7 @@ select {
 #submitButtonDiv {
     border-top: 1px solid black;
     padding-top: 40px;
+    padding-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -97,7 +129,7 @@ select {
 
 #submitButtonDiv input {
     padding: 15px 40px;
-    font-size: large;
+    font-size: medium;
     font-weight: bolder;
     color: white;
     background-color: black;

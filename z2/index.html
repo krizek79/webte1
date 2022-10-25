@@ -30,7 +30,7 @@
                     <span id="lastNameError"></span>
                 </label>
             </div>
-            <div id="sex-div">
+            <div class="row" id="sex-div">
                 Pohlavie*:<br>
                 <label for="sexMale">
                     <input type="radio" name="sex" id="sexMale"> Muž
@@ -93,7 +93,7 @@
             <div class="row">
                 <label for="regionSelect" id="region">
                     Kraj:<br>
-                    <select name="regionSelect" id="regionSelect" oninput="showOptions()">
+                    <select name="regionSelect" id="regionSelect" oninput="showBarbershopsOptions()">
                         <option selected="selected">---</option>
                     </select>
                 </label>
@@ -101,7 +101,7 @@
             <div class="row">
                 <label for="districtSelect" id="district">
                     Okres:<br>
-                    <select name="districtSelect" id="districtSelect" oninput="showOptions()">
+                    <select name="districtSelect" id="districtSelect" oninput="showBarbershopsOptions()">
                         <option selected="selected">---</option>
                     </select>
                 </label>
@@ -109,42 +109,25 @@
             <div class="row">
                 <label for="workerSelect" id="worker">
                     Kto sa o mňa postará:<br>
-                    <select name="workerSelect" id="workerSelect" oninput="showOptions()">
+                    <select name="workerSelect" id="workerSelect" oninput="showBarbershopsOptions()">
                         <option selected="selected">---</option>
                     </select>
                 </label>
             </div>
-            <div class="row">
-                <h3>Výber služby</h3>
+            <div class="row" id="noteCheckboxDiv">
+                <input type="checkbox" id="note" name="note" onclick="showNoteTextArea()">
+                <label for="note">Chcem pridať poznámku</label>
             </div>
-            <div class="row" id="service">
-                <label for="classicMensCut">
-                    Klasický pánsky strih ..... 18 €
-                    <input type="radio" name="service" id="classicMensCut">
-                </label>
-                <label for="beardService">
-                    Úprava brady ..... 15 €
-                    <input type="radio" name="service" id="beardService">
-                </label>
-                <label for="classicWomensCut">
-                    Klasický dámsky strih ..... 25 €
-                    <input type="radio" name="service" id="classicWomensCut">
-                </label>
-                <label for="eyebrowsService">
-                    Úprava obočia ..... 9 €
-                    <input type="radio" name="service" id="eyebrowsService">
-                </label>
-                <label for="fullService">
-                    Plný servis ..... 30 €
-                    <input type="radio" name="service" id="fullService">
-                </label>
+            <div class="row" id="noteTextAreaDiv">
+                <label for="noteTextArea">Poznámka:</label>
+                <textarea name="noteTextArea" id="noteTextArea" maxlength="200"></textarea>
+                <span id="letterCounter"></span>
             </div>
         </div>
 
         <div id="submitButtonDiv">
             <input type="submit" value="Odoslať">
         </div>
-
         <div id="legend">* povinné pole</div>
     </div>
 
