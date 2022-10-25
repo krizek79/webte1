@@ -9,8 +9,8 @@
     <title>Vyplňovací formulár</title>
 </head>
 <body>
-    <div id="content-box">
-        <h1>Registrácia termínu stretnutia v barbershope</h1>
+    <form method="post" id="content-box">
+        <h1>Registrácia termínu v barbershope</h1>
 
         <div class="column" id="firstColumn">
             <div class="row">
@@ -33,10 +33,10 @@
             <div class="row" id="sex-div">
                 Pohlavie*:<br>
                 <label for="sexMale">
-                    <input type="radio" name="sex" id="sexMale"> Muž
+                    <input type="radio" name="sex" id="sexMale" oninput="generateSpecialService()"> Muž
                 </label>
                 <label for="sexFemale">
-                    <input type="radio" name="sex" id="sexFemale"> Žena
+                    <input type="radio" name="sex" id="sexFemale" oninput="generateSpecialService()"> Žena
                 </label>
             </div>
             <div class="row">
@@ -72,6 +72,15 @@
         <div class="column" id="second-column">
             <div class="row">
                 <h2>Bližšia špecifikácia</h2>
+            </div>
+            <div class="row" id="specialServiceDiv">
+                <label for="specialServiceDiv" id="specialServiceLabel"></label>
+                <label for="specialServiceYes">
+                    <input type="radio" name="specialService" id="specialServiceYes"> Áno
+                </label>
+                <label for="specialServiceNo">
+                    <input type="radio" name="specialService" id="specialServiceNo"> Nie
+                </label>
             </div>
             <div class="row">
                 <label for="appointmentDate">
@@ -126,10 +135,10 @@
         </div>
 
         <div id="submitButtonDiv">
-            <input type="submit" value="Odoslať">
+            <input type="submit" value="Odoslať" id="submitInput">
         </div>
         <div id="legend">* povinné pole</div>
-    </div>
+    </form>
 
     <script src="script.js"></script>
 </body>

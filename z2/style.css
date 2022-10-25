@@ -3,11 +3,11 @@
 body {
     font-family: 'Noto Sans JP', sans-serif;
     /*background-image: linear-gradient(to right, #232323, #5a5a5a);*/
-    background-image: linear-gradient(to right, #232323, #a26848);
+    background-image: linear-gradient(45deg, #232323, #a26848);
 }
 
 #content-box {
-    padding: 20px 50px 50px;
+    padding: 20px 50px 30px 50px;
     background-color: white;
     max-width: 80%;
     margin: 20px auto;
@@ -70,6 +70,12 @@ input[type=radio] {
 #sex-div {
     display: flex;
     column-gap: 100px;
+}
+
+#specialServiceDiv {
+    display: none;
+    flex-wrap: wrap;
+    gap: 10px 50px;
 }
 
 #noteCheckboxDiv {
@@ -138,6 +144,7 @@ select {
 
 #submitButtonDiv input:hover {
     background-color: #005400;
+    cursor: pointer;
 }
 
 #legend {
