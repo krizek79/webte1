@@ -73,15 +73,6 @@
             <div class="row">
                 <h2>Bližšia špecifikácia</h2>
             </div>
-            <div class="row" id="specialServiceDiv">
-                <label for="specialServiceDiv" id="specialServiceLabel"></label>
-                <label for="specialServiceYes">
-                    <input type="radio" name="specialService" id="specialServiceYes"> Áno
-                </label>
-                <label for="specialServiceNo">
-                    <input type="radio" name="specialService" id="specialServiceNo"> Nie
-                </label>
-            </div>
             <div class="row">
                 <label for="appointmentDate">
                     Dátum stretnutia*<br>
@@ -94,6 +85,38 @@
                     Čas stretnutia*<br>
                     <input type="time" id="appointmentTime" name="appointmentTime" oninput="validateAppointmentTime()">
                     <span id="appointmentTimeError"></span>
+                </label>
+            </div>
+            <div class="row">
+                <h3>Výber služieb</h3>
+            </div>
+            <div class="row" id="servicesDiv">
+                <ul>
+                    <li>
+                        <input type="checkbox" name="service" id="option1">
+                        <label for="option1"> Masáž hlavy (+ 2 €)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="service" id="option2">
+                        <label for="option2"> Farbenie vlasov (+ 10 €)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="service" id="option3">
+                        <label for="option3"> Žehlenie vlasov (+ 5 €)</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="service" id="option4">
+                        <label for="option4"> Premium šampón (+ 1 €)</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" id="specialServiceDiv">
+                <label id="specialServiceLabel"></label>
+                <label for="specialServiceYes">
+                    <input type="radio" name="specialService" id="specialServiceYes"> Áno
+                </label>
+                <label for="specialServiceNo">
+                    <input type="radio" name="specialService" id="specialServiceNo"> Nie
                 </label>
             </div>
             <div class="row">
@@ -134,7 +157,7 @@
             </div>
         </div>
 
-        <div id="submitButtonDiv">
+        <div id="submitDiv">
             <input type="submit" value="Odoslať" id="submitInput">
         </div>
         <div id="legend">* povinné pole</div>
