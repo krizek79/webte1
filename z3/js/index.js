@@ -12,7 +12,6 @@ window.onload = () => {
         $(data).find("zaznam").each(function() {
             let $dataPoint = $(this)
 
-            //  Combo chart
             let A = $dataPoint.find("A").text()
             dataPointsA.push(A)
             let B = $dataPoint.find("B").text()
@@ -30,55 +29,50 @@ window.onload = () => {
             let year = $dataPoint.find("rok").text()
             dataPointsYear.push(year)
 
-            let colA = {
+            //  Combo chart
+            let traceA = {
                 x: dataPointsYear,
                 y: dataPointsA,
                 name: "A",
                 type: "bar",
                 text: dataPointsA.map(String)
             }
-
-            let colB = {
+            let traceB = {
                 x: dataPointsYear,
                 y: dataPointsB,
                 name: "B",
                 type: "bar",
                 text: dataPointsB.map(String)
             }
-
-            let colC = {
+            let traceC = {
                 x: dataPointsYear,
                 y: dataPointsC,
                 name: "C",
                 type: "bar",
                 text: dataPointsC.map(String)
             }
-
-            let colD = {
+            let traceD = {
                 x: dataPointsYear,
                 y: dataPointsD,
                 name: "D",
                 type: "bar",
                 text: dataPointsD.map(String)
             }
-
-            let colE = {
+            let traceE = {
                 x: dataPointsYear,
                 y: dataPointsE,
                 name: "E",
                 type: "bar",
                 text: dataPointsE.map(String)
             }
-
-            let colFx = {
+            let traceFx = {
                 x: dataPointsYear,
                 y: dataPointsFX,
                 name: "Fx",
                 type: "bar",
                 text: dataPointsFX.map(String)
             }
-
-            let colFn = {
+            let traceFn = {
                 x: dataPointsYear,
                 y: dataPointsFN,
                 name: "Fn",
@@ -86,9 +80,8 @@ window.onload = () => {
                 text: dataPointsFN.map(String)
             }
 
-            let data = [colA, colB, colC, colD, colE, colFx, colFn]
-
-            let layout = {
+            let comboChartData = [traceA, traceB, traceC, traceD, traceE, traceFx, traceFn]
+            let comboChartLayout = {
                 title: "Úspešnosť na predmete WEBTE1",
                 xaxis: {
                     title: "Akademický rok"
@@ -97,23 +90,96 @@ window.onload = () => {
                     title: "Počet študentov"
                 }
             }
+            let comboChartconfig = {
+                responsive: true
+            }
 
-            Plotly.newPlot("comboChart", data, layout)
+            Plotly.newPlot("comboChart", comboChartData, comboChartLayout, comboChartconfig)
 
             // Pie charts
             for (let i = 0; i < dataPointsYear.length; i++) {
                 let pieChart = [{
                     values: [dataPointsA[i], dataPointsB[i],dataPointsC[i], dataPointsD[i],dataPointsE[i],dataPointsFX[i],dataPointsFN[i]],
                     labels: ["A","B","C","D","E","FX","FN"],
-                    type: "pie",
+                    type: "pie"
                 }]
-                let layout = {
-                    title: dataPointsYear[i],
-                    width: 400,
-                    height: 400
+                let pieChartLayout = {
+                    title: "Úspešnosť na predmete WEBTE1 " + dataPointsYear[i]
                 }
-                Plotly.newPlot("pieChart" + i, pieChart, layout)
+                let pieChartConfig = {
+                    responsive: true
+                }
+
+                Plotly.newPlot("pieChart" + i, pieChart, pieChartLayout, pieChartConfig)
             }
+
+            // Area chart
+            let areaChartTraceA = {
+                x: dataPointsYear,
+                y: dataPointsA,
+                name: "A",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceB = {
+                x: dataPointsYear,
+                y: dataPointsB,
+                name: "B",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceC = {
+                x: dataPointsYear,
+                y: dataPointsC,
+                name: "C",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceD = {
+                x: dataPointsYear,
+                y: dataPointsD,
+                name: "D",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceE = {
+                x: dataPointsYear,
+                y: dataPointsE,
+                name: "E",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceFx = {
+                x: dataPointsYear,
+                y: dataPointsFX,
+                name: "FX",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+            let areaChartTraceFn = {
+                x: dataPointsYear,
+                y: dataPointsFN,
+                name: "FN",
+                type: "scatter",
+                stackgroup: "one",
+                groupnorm: "percent"
+            }
+
+            let areaChartData = [areaChartTraceA, areaChartTraceB, areaChartTraceC, areaChartTraceD, areaChartTraceE, areaChartTraceFn, areaChartTraceFx]
+            let areaChartLayout = {
+                title: "Úspešnosť na predmete WEBTE1"
+            }
+            let areaChartConfig = {
+                responsive: true
+            }
+
+            Plotly.newPlot("areaChart", areaChartData, areaChartLayout, areaChartConfig)
         })
     })
 }
