@@ -7,9 +7,73 @@ let dataPointsFX = []
 let dataPointsFN = []
 let dataPointsYear = []
 
+//  Combo chart
+const comboChartTraceA = {
+    x: null,
+    y: null,
+    name: "A",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceB = {
+    x: [],
+    y: [],
+    name: "B",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceC = {
+    x: [],
+    y: [],
+    name: "C",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceD = {
+    x: [],
+    y: [],
+    name: "D",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceE = {
+    x: [],
+    y: [],
+    name: "E",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceFx = {
+    x: [],
+    y: [],
+    name: "Fx",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+const comboChartTraceFn = {
+    x: [],
+    y: [],
+    name: "Fn",
+    type: "bar",
+    text: null,
+    orientation: "v"
+}
+
+window.onresize = () => {
+    if ($(window).width() < 576) {
+        console.log("yeeyee ass graph rotation")
+    }
+}
+
 window.onload = () => {
-    $.get("../z03.xml", function(data) {
-        $(data).find("zaznam").each(function() {
+    $.get("../z03.xml", function (data) {
+        $(data).find("zaznam").each(function () {
             let $dataPoint = $(this)
 
             let A = $dataPoint.find("A").text()
@@ -30,57 +94,35 @@ window.onload = () => {
             dataPointsYear.push(year)
 
             //  Combo chart
-            let traceA = {
-                x: dataPointsYear,
-                y: dataPointsA,
-                name: "A",
-                type: "bar",
-                text: dataPointsA.map(String)
-            }
-            let traceB = {
-                x: dataPointsYear,
-                y: dataPointsB,
-                name: "B",
-                type: "bar",
-                text: dataPointsB.map(String)
-            }
-            let traceC = {
-                x: dataPointsYear,
-                y: dataPointsC,
-                name: "C",
-                type: "bar",
-                text: dataPointsC.map(String)
-            }
-            let traceD = {
-                x: dataPointsYear,
-                y: dataPointsD,
-                name: "D",
-                type: "bar",
-                text: dataPointsD.map(String)
-            }
-            let traceE = {
-                x: dataPointsYear,
-                y: dataPointsE,
-                name: "E",
-                type: "bar",
-                text: dataPointsE.map(String)
-            }
-            let traceFx = {
-                x: dataPointsYear,
-                y: dataPointsFX,
-                name: "Fx",
-                type: "bar",
-                text: dataPointsFX.map(String)
-            }
-            let traceFn = {
-                x: dataPointsYear,
-                y: dataPointsFN,
-                name: "Fn",
-                type: "bar",
-                text: dataPointsFN.map(String)
-            }
+            comboChartTraceA.x = dataPointsYear
+            comboChartTraceA.y = dataPointsA
+            comboChartTraceA.text = dataPointsA.map(String)
 
-            let comboChartData = [traceA, traceB, traceC, traceD, traceE, traceFx, traceFn]
+            comboChartTraceB.x = dataPointsYear
+            comboChartTraceB.y = dataPointsB
+            comboChartTraceB.text = dataPointsB.map(String)
+
+            comboChartTraceC.x = dataPointsYear
+            comboChartTraceC.y = dataPointsC
+            comboChartTraceC.text = dataPointsC.map(String)
+
+            comboChartTraceD.x = dataPointsYear
+            comboChartTraceD.y = dataPointsD
+            comboChartTraceD.text = dataPointsD.map(String)
+
+            comboChartTraceE.x = dataPointsYear
+            comboChartTraceE.y = dataPointsE
+            comboChartTraceE.text = dataPointsE.map(String)
+
+            comboChartTraceFx.x = dataPointsYear
+            comboChartTraceFx.y = dataPointsFX
+            comboChartTraceFx.text = dataPointsFX.map(String)
+
+            comboChartTraceFn.x = dataPointsYear
+            comboChartTraceFn.y = dataPointsFN
+            comboChartTraceFn.text = dataPointsFN.map(String)
+
+            let comboChartData = [comboChartTraceA, comboChartTraceB, comboChartTraceC, comboChartTraceD, comboChartTraceE, comboChartTraceFx, comboChartTraceFn]
             let comboChartLayout = {
                 title: "Úspešnosť na predmete WEBTE1",
                 xaxis: {
@@ -104,7 +146,7 @@ window.onload = () => {
                     type: "pie"
                 }]
                 let pieChartLayout = {
-                    title: "Úspešnosť na predmete WEBTE1 " + dataPointsYear[i]
+                    title: dataPointsYear[i]
                 }
                 let pieChartConfig = {
                     responsive: true
