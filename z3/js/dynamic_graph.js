@@ -78,6 +78,10 @@ function terminate () {
 
     Plotly.purge(chartDiv)
     Plotly.newPlot(chartDiv, [traceSin, traceCos], layout, config)
+    Plotly.relayout(chartDiv, {
+        'xaxis.autorange': true,
+        'yaxis.autorange': true
+    });
 
     document.querySelector("#terminateBtn").disabled = true
     document.querySelector("#drawBtn").disabled = false
