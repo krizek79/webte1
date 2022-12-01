@@ -2,10 +2,6 @@ html body {
     background-color: rgb(209, 250, 229);
 }
 
-#navbar {
-    background-color: rgb(52, 211, 153);
-}
-
-#offCanvasBody, #offCanvasHeader {
+#navbar, #offCanvasBody, #offCanvasHeader, #footerDiv {
     background-color: rgb(52, 211, 153);
 }
