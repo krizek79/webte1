@@ -55,32 +55,5 @@ function filterImages () {
 }
 
 function openModal (item) {
-    let imageModal = document.createElement("div")
-    imageModal.id = "imageModalDiv"
-    imageModal.className = "d-block w-75 p-2 z-index-master bg-dark text-light"
-    mainSection.appendChild(imageModal)
-
-    let previousBtn = document.createElement("button")
-    previousBtn.innerHTML = "Predošlá"
-    imageModal.appendChild(previousBtn)
-    let nextBtn = document.createElement("button")
-    nextBtn.innerHTML = "Ďalšia"
-    imageModal.appendChild(nextBtn)
-
-    let closeBtn = document.createElement("button")
-    closeBtn.innerHTML = "Zatvoriť"
-    closeBtn.onclick = () => imageModal.className = "d-none"
-    imageModal.appendChild(closeBtn)
-
-    let image = document.createElement("image")
-    image.src = item.path
-    image.alt = "Ooops"
-    imageModal.appendChild(image)
-
-    let header = document.createElement("h4")
-    header.innerHTML = item.title
-    imageModal.appendChild(header)
-    let description = document.createElement("p")
-    description.innerHTML = item.description
-    imageModal.appendChild(description)
+    console.log("P**OVIN* SKU**VE**A PO*EBA**")
 }
