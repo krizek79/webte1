@@ -1,69 +1,69 @@
 [
   {
-    "path": "./photos/kopec-sasova-1.jpg",
+    "path": "../photos/kopec-sasova-1.jpg",
     "title": "Výhľad 1",
     "description": "Panoráma nad sídliskom Sásová 1",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/kopec-sasova-2.jpg",
+    "path": "../photos/kopec-sasova-2.jpg",
     "title": "Výhľad 2",
     "description": "Panoráma nad sídliskom Sásová 2",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/kopec-sasova-3.jpg",
+    "path": "../photos/kopec-sasova-3.jpg",
     "title": "Výhľad 3",
     "description": "Panoráma nad sídliskom Sásová 3",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/bb-1.jpg",
+    "path": "../photos/bb-1.jpg",
     "title": "Námestie v Banskej Bystrici 1",
     "description": "Cesta cez námestie zo stužkovej 1",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/bb-2.jpg",
+    "path": "../photos/bb-2.jpg",
     "title": "Námestie v Banskej Bystrici 2",
     "description": "Cesta cez námestie zo stužkovej 1",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/ba-hrad-1.jpg",
+    "path": "../photos/ba-hrad-1.jpg",
     "title": "Bratislavký hrad 1",
     "description": "foiabfoiaeof",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/ba-hrad-2.jpg",
+    "path": "../photos/ba-hrad-2.jpg",
     "title": "Bratislavský hrad 2",
     "description": "anlfnilafiwaif",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/kalvaria-stiavnica.jpg",
+    "path": "../photos/kalvaria-stiavnica.jpg",
     "title": "Umenie",
     "description": "Tvorba anonymného umelca",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/znh-zoo.jpg",
+    "path": "../photos/znh-zoo.jpg",
     "title": "Klokan",
     "description": "Klokan v Žiari nad Hronom",
     "dateTime": "",
     "gps": ""
   },
   {
-    "path": "./photos/litava.jpg",
+    "path": "../photos/litava.jpg",
     "title": "Litava",
     "description": "no comment",
     "dateTime": "",

@@ -13,11 +13,10 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand fs-3 fw-normal" href="#">ZADANIE #4</a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-dark" type="submit">Search</button>
+        <form class="d-flex" role="search" onkeyup="filterImages()">
+            <input type="search" id="searchBar" class="form-control" placeholder="Search" aria-label="Search">
         </form>
         <button class="fs-4 navbar-toggler btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -41,14 +40,12 @@
 </nav>
 
 <!-- Content -->
-<section class="container-fluid">
-    <div class="w-100 pt-3">
+<section class="container" id="mainSection">
+    <div class="w-100 pt-3 m-auto">
         <h2>Galéria</h2>
     </div>
 
-    <div class="container-fluid rounded bg-dark text-light" id="imagesContainer">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut autem consequatur corporis cumque doloribus eligendi error et ipsam magnam maiores nesciunt obcaecati officiis, possimus qui quis recusandae sapiente tempore voluptatum?
-    </div>
+    <div class="container row rounded m-auto" id="imagesContainer"></div>
 </section>
 
 <!-- Footer -->
