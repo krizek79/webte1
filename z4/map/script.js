@@ -30,14 +30,16 @@ function drawMarkers () {
     imagesData.forEach(item => {
         let marker = L.marker([item.gps[0], item.gps[1]]).addTo(map)
         markers.push(marker)
-        for (let index in markers) {
-            index = Number(index)
-            markers[index].addEventListener("click", () => openModal(index))
-        }
     })
+    for (let index in markers) {
+        index = Number(index)
+        markers[index].addEventListener("click", () => {
+            openModal(imagesData, index)
+        })
+    }
 }
 
-function openModal (index) {
+function openModal (data, index) {
     let currentImageIndex = index
     let modalBodyArr = []
 
@@ -46,8 +48,8 @@ function openModal (index) {
     mainSection.appendChild(modal)
 
     //  Body
-    for (let index in imagesData) {
-        let modalBodyElements = generateModalBody(index);
+    for (let index in data) {
+        let modalBodyElements = generateModalBody(data, index);
         modalBodyArr.push(modalBodyElements)
     }
 
@@ -67,17 +69,17 @@ function openModal (index) {
     modalHeader.appendChild(modalNavigation)
 
     let previousBtn = document.createElement("button")
-    previousBtn.className = "button"
+    previousBtn.className = "button p-1"
     previousBtn.innerHTML = "Predošlá"
     previousBtn.onclick = () => {
-        changeImage(modalBodyArr, currentImageIndex, -1)
-        currentImageIndex = getCurrentImageIndex(currentImageIndex, -1)
+        changeImage(data, modalBodyArr, currentImageIndex, -1)
+        currentImageIndex = getCurrentImageIndex(data, currentImageIndex, -1)
     }
     modalNavigation.appendChild(previousBtn)
 
     let presentationStarted = false
     let slideShowBtn = document.createElement("button")
-    slideShowBtn.className = "button"
+    slideShowBtn.className = "button p-1"
     slideShowBtn.innerHTML = "Prezentácia"
     slideShowBtn.onclick = () => {
         presentationStarted = !presentationStarted
@@ -86,11 +88,11 @@ function openModal (index) {
     modalNavigation.appendChild(slideShowBtn)
 
     let nextBtn = document.createElement("button")
-    nextBtn.className = "button"
+    nextBtn.className = "button p-1"
     nextBtn.innerHTML = "Ďalšia"
     nextBtn.onclick = () => {
-        changeImage(modalBodyArr, currentImageIndex, 1)
-        currentImageIndex = getCurrentImageIndex(currentImageIndex, 1)
+        changeImage(data, modalBodyArr, currentImageIndex, 1)
+        currentImageIndex = getCurrentImageIndex(data, currentImageIndex, 1)
     }
     modalNavigation.appendChild(nextBtn)
 
@@ -108,7 +110,7 @@ function openModal (index) {
     overlay.classList.add('active')
 }
 
-function generateModalBody (currentImageIndex) {
+function generateModalBody (data, currentImageIndex) {
     let modalBody = document.createElement("div")
     modalBody.setAttribute("id", "modalBody")
     modalBody.style.display = "none"
@@ -119,7 +121,7 @@ function generateModalBody (currentImageIndex) {
 
     let modalImage = document.createElement("img")
     modalImage.setAttribute("id", "modalImage")
-    modalImage.src = imagesData[currentImageIndex].path
+    modalImage.src = data[currentImageIndex].path
     modalImage.alt = "Ooops"
     modalImageDiv.appendChild(modalImage)
 
@@ -128,17 +130,17 @@ function generateModalBody (currentImageIndex) {
 
     let modalTitle = document.createElement("h4")
     modalTitle.setAttribute("id", "modalTitle")
-    modalTitle.innerHTML = imagesData[currentImageIndex].title
+    modalTitle.innerHTML = data[currentImageIndex].title
     modalBodyInfo.appendChild(modalTitle)
 
     let modalTimeSpan = document.createElement("span")
     modalTimeSpan.setAttribute("id", "modalTimeSpan")
-    modalTimeSpan.innerHTML = imagesData[currentImageIndex].dateTime
+    modalTimeSpan.innerHTML = data[currentImageIndex].dateTime
     modalBodyInfo.appendChild(modalTimeSpan)
 
     let modalDescription = document.createElement("p")
     modalDescription.setAttribute("id", "modalDescription")
-    modalDescription.innerHTML = imagesData[currentImageIndex].description
+    modalDescription.innerHTML = data[currentImageIndex].description
     modalBodyInfo.appendChild(modalDescription)
 
     return modalBody
@@ -149,24 +151,24 @@ function closeModal (modal, overlay) {
     overlay.classList.remove('active')
 }
 
-function changeImage (modalBodyArr, current, value) {
+function changeImage (data, modalBodyArr, current, value) {
     modalBodyArr[current].style.display = "none"
     current += value
     if (current < 0) {
-        current = imagesData.length - 1
+        current = data.length - 1
     }
-    if (current > (imagesData.length - 1)) {
+    if (current > (data.length - 1)) {
         current = 0
     }
     modalBodyArr[current].style.display = "block"
 }
 
-function getCurrentImageIndex (current, value) {
+function getCurrentImageIndex (data, current, value) {
     current += value
     if (current < 0) {
-        current = imagesData.length - 1
+        current = data.length - 1
     }
-    if (current > (imagesData.length - 1)) {
+    if (current > (data.length - 1)) {
         current = 0
     }
     return current

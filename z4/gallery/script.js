@@ -85,7 +85,7 @@ function openModal (data, index) {
     modalHeader.appendChild(modalNavigation)
 
     let previousBtn = document.createElement("button")
-    previousBtn.className = "button"
+    previousBtn.className = "button p-1"
     previousBtn.innerHTML = "Predošlá"
     previousBtn.onclick = () => {
         changeImage(data, modalBodyArr, currentImageIndex, -1)
@@ -95,7 +95,7 @@ function openModal (data, index) {
 
     let presentationStarted = false
     let slideShowBtn = document.createElement("button")
-    slideShowBtn.className = "button"
+    slideShowBtn.className = "button p-1"
     slideShowBtn.innerHTML = "Prezentácia"
     slideShowBtn.onclick = () => {
         presentationStarted = !presentationStarted
@@ -104,7 +104,7 @@ function openModal (data, index) {
     modalNavigation.appendChild(slideShowBtn)
 
     let nextBtn = document.createElement("button")
-    nextBtn.className = "button"
+    nextBtn.className = "button p-1"
     nextBtn.innerHTML = "Ďalšia"
     nextBtn.onclick = () => {
         changeImage(data, modalBodyArr, currentImageIndex, 1)
@@ -127,8 +127,6 @@ function openModal (data, index) {
 }
 
 function generateModalBody (data, currentImageIndex) {
-    console.log(currentImageIndex)
-
     let modalBody = document.createElement("div")
     modalBody.setAttribute("id", "modalBody")
     modalBody.style.display = "none"

@@ -6,23 +6,44 @@ html body {
     background-color: rgb(52, 211, 153);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #484848;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 #modal {
     background: black;
     position: absolute;
-    top: 2%;
+    top: 1%;
     left: 50%;
-    transform: translate(-50%, 2%) scale(0);
+    transform: translate(-50%, 1%) scale(0);
     transition: 200ms ease-in-out;
     padding: 1rem;
     border: 1px solid black;
     border-radius: .25rem;
     z-index: 1060;
     width: 1270px;
+    max-height: 720px;
+    overflow-y: scroll;
     max-width: 80%;
 }
 
 #modal.active {
-    transform: translate(-50%, 2%) scale(1);
+    transform: translate(-50%, 1%) scale(1);
 }
 
 #modalHeader {
