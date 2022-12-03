@@ -2,7 +2,7 @@
 <html lang="sk">
 <head>
     <meta charset="UTF-8">
-    <title>Zadanie #4 | Galéria</title>
+    <title>Zadanie #4 | Mapa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -17,9 +17,6 @@
 <nav class="navbar" id="navbar">
     <div class="container">
         <a class="navbar-brand fs-3 fw-normal" href="#">ZADANIE #4</a>
-        <form class="d-flex" role="search" onkeyup="filterImages()">
-            <input type="search" id="searchBar" class="form-control" placeholder="Search" aria-label="Search">
-        </form>
         <button class="fs-4 navbar-toggler btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,10 +27,10 @@
             <div class="offcanvas-body fs-5" id="offCanvasBody">
                 <ul class="navbar-nav fw-bold justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Galéria</a>
+                        <a class="nav-link" href="../gallery/index.html">Galéria</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../map/index.html">Mapa</a>
+                        <a class="nav-link active" href="#">Mapa</a>
                     </li>
                 </ul>
             </div>
@@ -44,10 +41,10 @@
 <!-- Content -->
 <section class="container" id="mainSection">
     <div class="w-100 pt-3 m-auto">
-        <h2>Galéria</h2>
+        <h2>Mapa</h2>
     </div>
 
-    <div class="container row rounded m-auto" id="imagesContainer"></div>
+    <div id="map"></div>
 </section>
 
 <!-- Footer -->

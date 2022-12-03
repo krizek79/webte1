@@ -93,6 +93,16 @@ function openModal (index) {
     }
     modalNavigation.appendChild(previousBtn)
 
+    let presentationStarted = false
+    let slideShowBtn = document.createElement("button")
+    slideShowBtn.className = "button"
+    slideShowBtn.innerHTML = "Prezentácia"
+    slideShowBtn.onclick = () => {
+        presentationStarted = !presentationStarted
+
+    }
+    modalNavigation.appendChild(slideShowBtn)
+
     let nextBtn = document.createElement("button")
     nextBtn.className = "button"
     nextBtn.innerHTML = "Ďalšia"
@@ -139,10 +149,29 @@ function generateModalBody (currentImageIndex) {
     modalTitle.innerHTML = imagesData[currentImageIndex].title
     modalBodyInfo.appendChild(modalTitle)
 
+    let modalTimeSpan = document.createElement("span")
+    modalTimeSpan.setAttribute("id", "modalTimeSpan")
+    modalTimeSpan.innerHTML = imagesData[currentImageIndex].dateTime
+    modalBodyInfo.appendChild(modalTimeSpan)
+
     let modalDescription = document.createElement("p")
     modalDescription.setAttribute("id", "modalDescription")
     modalDescription.innerHTML = imagesData[currentImageIndex].description
     modalBodyInfo.appendChild(modalDescription)
+
+    //  Map
+    let modalMap = document.createElement("div")
+    modalMap.setAttribute("id", "map")
+    let map = L.map(modalMap).setView([0, 0], 0)
+    setTimeout(() => {
+        map.invalidateSize()
+    }, 0)
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    map.setView([imagesData[currentImageIndex].gps[0], imagesData[currentImageIndex].gps[1]], 10)
+    L.marker([imagesData[currentImageIndex].gps[0], imagesData[currentImageIndex].gps[1]]).addTo(map)
+    modalBody.appendChild(modalMap)
 
     return modalBody
 }
