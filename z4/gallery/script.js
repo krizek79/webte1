@@ -28,7 +28,7 @@ function createGalleryElements (data) {
         index = Number(index)
         let imageDiv = document.createElement("div")
         imageDiv.className = "col-lg-3 col-md-4 col-sm-6 p-1"
-        imageDiv.onclick = () => openModal(index)
+        imageDiv.onclick = () => openModal(data, index)
         imagesContainer.appendChild(imageDiv)
 
         let image = document.createElement("img")
@@ -55,7 +55,7 @@ function filterImages () {
     createGalleryElements(data)
 }
 
-function openModal (index) {
+function openModal (data, index) {
     let currentImageIndex = index
     let modalBodyArr = []
 
@@ -64,8 +64,8 @@ function openModal (index) {
     mainSection.appendChild(modal)
 
     //  Body
-    for (let index in imagesData) {
-        let modalBodyElements = generateModalBody(index);
+    for (let index in data) {
+        let modalBodyElements = generateModalBody(data, index);
         modalBodyArr.push(modalBodyElements)
     }
 
@@ -88,8 +88,8 @@ function openModal (index) {
     previousBtn.className = "button"
     previousBtn.innerHTML = "Predošlá"
     previousBtn.onclick = () => {
-        changeImage(modalBodyArr, currentImageIndex, -1)
-        currentImageIndex = getCurrentImageIndex(currentImageIndex, -1)
+        changeImage(data, modalBodyArr, currentImageIndex, -1)
+        currentImageIndex = getCurrentImageIndex(data, currentImageIndex, -1)
     }
     modalNavigation.appendChild(previousBtn)
 
@@ -107,8 +107,8 @@ function openModal (index) {
     nextBtn.className = "button"
     nextBtn.innerHTML = "Ďalšia"
     nextBtn.onclick = () => {
-        changeImage(modalBodyArr, currentImageIndex, 1)
-        currentImageIndex = getCurrentImageIndex(currentImageIndex, 1)
+        changeImage(data, modalBodyArr, currentImageIndex, 1)
+        currentImageIndex = getCurrentImageIndex(data, currentImageIndex, 1)
     }
     modalNavigation.appendChild(nextBtn)
 
@@ -126,7 +126,9 @@ function openModal (index) {
     overlay.classList.add('active')
 }
 
-function generateModalBody (currentImageIndex) {
+function generateModalBody (data, currentImageIndex) {
+    console.log(currentImageIndex)
+
     let modalBody = document.createElement("div")
     modalBody.setAttribute("id", "modalBody")
     modalBody.style.display = "none"
@@ -137,7 +139,7 @@ function generateModalBody (currentImageIndex) {
 
     let modalImage = document.createElement("img")
     modalImage.setAttribute("id", "modalImage")
-    modalImage.src = imagesData[currentImageIndex].path
+    modalImage.src = data[currentImageIndex].path
     modalImage.alt = "Ooops"
     modalImageDiv.appendChild(modalImage)
 
@@ -146,17 +148,17 @@ function generateModalBody (currentImageIndex) {
 
     let modalTitle = document.createElement("h4")
     modalTitle.setAttribute("id", "modalTitle")
-    modalTitle.innerHTML = imagesData[currentImageIndex].title
+    modalTitle.innerHTML = data[currentImageIndex].title
     modalBodyInfo.appendChild(modalTitle)
 
     let modalTimeSpan = document.createElement("span")
     modalTimeSpan.setAttribute("id", "modalTimeSpan")
-    modalTimeSpan.innerHTML = imagesData[currentImageIndex].dateTime
+    modalTimeSpan.innerHTML = data[currentImageIndex].dateTime
     modalBodyInfo.appendChild(modalTimeSpan)
 
     let modalDescription = document.createElement("p")
     modalDescription.setAttribute("id", "modalDescription")
-    modalDescription.innerHTML = imagesData[currentImageIndex].description
+    modalDescription.innerHTML = data[currentImageIndex].description
     modalBodyInfo.appendChild(modalDescription)
 
     //  Map
@@ -169,8 +171,8 @@ function generateModalBody (currentImageIndex) {
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    map.setView([imagesData[currentImageIndex].gps[0], imagesData[currentImageIndex].gps[1]], 10)
-    L.marker([imagesData[currentImageIndex].gps[0], imagesData[currentImageIndex].gps[1]]).addTo(map)
+    map.setView([data[currentImageIndex].gps[0], data[currentImageIndex].gps[1]], 10)
+    L.marker([data[currentImageIndex].gps[0], data[currentImageIndex].gps[1]]).addTo(map)
     modalBody.appendChild(modalMap)
 
     return modalBody
@@ -181,24 +183,24 @@ function closeModal (modal, overlay) {
     overlay.classList.remove('active')
 }
 
-function changeImage (modalBodyArr, current, value) {
+function changeImage (data, modalBodyArr, current, value) {
     modalBodyArr[current].style.display = "none"
     current += value
     if (current < 0) {
-        current = imagesData.length - 1
+        current = data.length - 1
     }
-    if (current > (imagesData.length - 1)) {
+    if (current > (data.length - 1)) {
         current = 0
     }
     modalBodyArr[current].style.display = "block"
 }
 
-function getCurrentImageIndex (current, value) {
+function getCurrentImageIndex (data, current, value) {
     current += value
     if (current < 0) {
-        current = imagesData.length - 1
+        current = data.length - 1
     }
-    if (current > (imagesData.length - 1)) {
+    if (current > (data.length - 1)) {
         current = 0
     }
     return current

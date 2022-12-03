@@ -6,6 +6,86 @@ html body {
     background-color: rgb(52, 211, 153);
 }
 
+#modal {
+    background: black;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 2%) scale(0);
+    transition: 200ms ease-in-out;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: .25rem;
+    z-index: 1060;
+    width: 1270px;
+    max-width: 80%;
+}
+
+#modal.active {
+    transform: translate(-50%, 2%) scale(1);
+}
+
+#modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 1rem 0;
+}
+
+#closeBtn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+#modalImageDiv {
+    text-align: center;
+    background: #181818;
+}
+
+#modalImage {
+    max-width: 80%;
+    max-height: 720px;
+}
+
+#modalTitle {
+    color: white;
+    margin-top: 2.5rem;
+}
+
+#modalTimeSpan {
+    color: #9f9f9f;
+    border-bottom: 1px solid white;
+    padding-bottom: 0.5rem;
+}
+
+#modalDescription {
+    padding-top: 1rem;
+    color: #a6a6a6;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 200ms ease-in-out;
+    background: rgb(0, 0, 0, 75%);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    z-index: 1001;
+    pointer-events: all;
+}
+
 #map {
     height: 600px;
 }
