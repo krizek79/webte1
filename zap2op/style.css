@@ -1,0 +1,30 @@
+#showBtn {
+    margin: auto;
+    padding: 5px;
+}
+
+#buttonDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#tableDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+#tableDiv form {
+    margin-top: 20px;
+}
+
+#table {
+    width: 75%;
+    text-align: center;
+}
